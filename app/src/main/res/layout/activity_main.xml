@@ -69,7 +69,7 @@
     </GridLayout>
 
     <TextView
-        android:id="@+id/resultText"
+        android:id="@+id/statusText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -84,7 +84,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Play Again"
-        android:textColor="@android:color/holo_red_dark"
+        android:textColor="@android:color/holo_red_light"
         android:onClick="resetGame"/>
+
+    <TextView
+        android:id="@+id/resultText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="Who win?"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
 
 </LinearLayout>
