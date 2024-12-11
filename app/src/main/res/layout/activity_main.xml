@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:gravity="center"
+    android:background="@android:color/black">
+
+    <!-- Title or result message -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tic-Tac-Toe Best Game!"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Tic Tac Toe Grid -->
+
+    <GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:columnCount="3"
+        android:rowCount="3"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:alignmentMode="alignBounds"
+        android:rowOrderPreserved="false">
+
+        <Button
+            android:id="@+id/button1"
+            style="@style/TicTacToeButton" />
+
+        <Button
+            android:id="@+id/button2"
+            style="@style/TicTacToeButton" />
+
+        <Button
+            android:id="@+id/button3"
+            style="@style/TicTacToeButton" />
+
+        <Button
+            android:id="@+id/button4"
+            style="@style/TicTacToeButton" />
+
+        <Button
+            android:id="@+id/button5"
+            style="@style/TicTacToeButton" />
+
+        <Button
+            android:id="@+id/button6"
+            style="@style/TicTacToeButton" />
+
+        <Button
+            android:id="@+id/button7"
+            style="@style/TicTacToeButton" />
+
+        <Button
+            android:id="@+id/button8"
+            style="@style/TicTacToeButton" />
+
+        <Button
+            android:id="@+id/button9"
+            style="@style/TicTacToeButton" />
+
+    </GridLayout>
+
+    <TextView
+        android:id="@+id/resultText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Whose turn is it now?"
+        android:textSize="18sp"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="16dp"
+        android:gravity="center"/>
+
+</LinearLayout>
