@@ -80,7 +80,7 @@
 
     <!-- Play Again Button -->
     <Button
-        android:id="@+id/playAgainButton"
+        android:id="@+id/restartButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Play Again"
