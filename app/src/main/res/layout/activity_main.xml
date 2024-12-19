@@ -83,7 +83,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:gravity="center"
-        android:text="Whose turn is it now?"
         android:textColor="@android:color/white"
         android:textSize="18sp" />
 
