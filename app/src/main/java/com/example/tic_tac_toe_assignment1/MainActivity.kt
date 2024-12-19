@@ -1,47 +1,53 @@
 package com.example.tic_tac_toe_assignment1
 
 import android.os.Bundle
+import android.widget.Button
+import android.widget.GridLayout
+import android.widget.TextView
 import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.tic_tac_toe_assignment1.ui.theme.Tictactoeassignment1Theme
 
 class MainActivity : ComponentActivity() {
+    private lateinit var gridLayout: GridLayout
+    private lateinit var statusText: TextView
+    private lateinit var restartButton: Button
+    private var buttons = arrayOfNulls<Button>(9)
+    private var isXTurn = true
+    private var isGameOver = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContent {
-            Tictactoeassignment1Theme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
-            }
+        setContentView(R.layout.activity_main)
+
+        gridLayout = findViewById(R.id.gridLayout)
+        statusText = findViewById(R.id.statusText)
+        restartButton = findViewById(R.id.restartButton)
+
+        for (i in 0 until gridLayout.childCount) {
+            buttons[i] = gridLayout.getChildAt(i) as Button
+            buttons[i]?.setOnClickListener { onButtonClick(it as Button, i) }
         }
+
+        // Play Again Button
+        restartButton.setOnClickListener { resetGame() }
+
     }
-}
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
+    private fun onButtonClick(button: Button, index: Int) {
+        if (button.text.isNotEmpty()) return
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    Tictactoeassignment1Theme {
-        Greeting("Android")
+        button.text = if (isXTurn) "X" else "O"
+        statusText.text = if (isXTurn) "Player O's turn" else "Player X's turn"
+        isXTurn = !isXTurn
+
+    }
+    private fun resetGame() {
+        buttons.forEach { it?.text = "" }
+        statusText.text = "Player X's turn"
+        isXTurn = true
+        isGameOver = false
     }
 }
