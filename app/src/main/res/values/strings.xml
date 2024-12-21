@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">tic-tac-toe-assignment1</string>
+    <string name="app_name">tic-tac-toe</string>
+
+    <string name="player_won">Player %1$s won!</string>
+    <string name="player_turn">Player %1$s\'s turn</string>
+    <string name="tie">It\'s a tie!</string>
 </resources>
